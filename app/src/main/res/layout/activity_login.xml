@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
+
+    <!-- Imagem de fundo -->
+
+    <!-- Campo de Email -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/loginbg" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="274dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/email_outline_purple"
+        android:drawablePadding="12dp"
+        android:hint="Email:"
+        android:inputType="textEmailAddress"
+        android:padding="18dp"
+        android:textColor="#60169A"
+        android:textColorHint="#60169A" />
+
+    <!-- Campo de Senha -->
+    <EditText
+        android:id="@+id/editTextNumberPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextTextEmailAddress"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/lock_purple"
+        android:drawableEnd="@drawable/eye_purple"
+        android:drawablePadding="12dp"
+        android:hint="Senha:"
+        android:inputType="numberPassword"
+        android:padding="18dp"
+        android:textColor="#60169A"
+        android:textColorHint="#60169A" />
+
+    <!-- CheckBox: Manter conectado -->
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNumberPassword"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:buttonTint="@color/checkbox_color_selector"
+        android:text="Manter-me conectado"
+        android:textColor="#60169A" />
+
+    <!-- Texto: Esqueci a senha -->
+
+    <!-- Botão Entrar -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNumberPassword"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Esqueci a senha"
+        android:textColor="#60169A" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:layout_below="@+id/checkBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:background="@drawable/button_background"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:text="Entrar"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <!-- Texto para criar conta -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Ainda não possui uma conta? Cadastre-se"
+        android:textColor="#60169A"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>

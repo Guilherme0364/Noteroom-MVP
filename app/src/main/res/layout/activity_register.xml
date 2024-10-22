@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
+
+    <!-- Nome -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/register_background" />
+
+
+
+    <EditText
+        android:id="@+id/editnome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/white"
+        android:drawableStart="@drawable/account"
+        android:drawablePadding="12dp"
+        android:hint="Nome:"
+        android:inputType="text"
+        android:padding="18dp"
+        android:textColor="#60169A"
+        android:textColorHint="@android:color/white" />
+
+    <!-- Telefone -->
+    <EditText
+        android:id="@+id/edittelefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/editnome"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/white"
+        android:drawableStart="@drawable/cellphone"
+        android:drawablePadding="12dp"
+        android:hint="Telefone:"
+        android:inputType="phone"
+        android:padding="18dp"
+        android:textColor="#60169A"
+        android:textColorHint="@android:color/white" />
+
+    <!-- Email -->
+    <EditText
+        android:id="@+id/editemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/edittelefone"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/white"
+        android:drawableStart="@drawable/email_outline"
+        android:drawablePadding="12dp"
+        android:hint="Email:"
+        android:inputType="textEmailAddress"
+        android:padding="18dp"
+        android:textColor="#60169A"
+        android:textColorHint="@android:color/white" />
+
+    <!-- Senha -->
+    <EditText
+        android:id="@+id/editpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editemail"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/white"
+        android:drawableStart="@drawable/lock"
+        android:drawablePadding="12dp"
+        android:hint="Senha:"
+        android:inputType="textPassword"
+        android:padding="18dp"
+        android:textColor="#60169A"
+        android:textColorHint="@android:color/white" />
+
+    <!-- Botão -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@+id/editpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/button_background"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:text="Cadastrar-se"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <!-- Texto para login -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Já possui uma conta? Entrar"
+        android:textColor="#60169A" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Noteroom"
+        android:textSize="30sp"
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>
