@@ -6,9 +6,13 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.noteroom.R
-import com.example.noteroom.data.database.SingletonDatabase
+import com.example.noteroom.data.api.ApiService
 import com.example.noteroom.data.model.User
-import java.sql.PreparedStatement
+import com.example.noteroom.network.RetrofitClient
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -17,19 +21,18 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var registerButton: Button
+    private val apiService: ApiService by lazy { RetrofitClient.instance }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        // Inicializando os campos de entrada
         nameEditText = findViewById(R.id.editTextName)
         phoneEditText = findViewById(R.id.editTextPhone)
         emailEditText = findViewById(R.id.editTextEmail)
         passwordEditText = findViewById(R.id.editTextPassword)
         registerButton = findViewById(R.id.buttonRegister)
 
-        // Configurando o clique do botão de registro
         registerButton.setOnClickListener {
             val name = nameEditText.text.toString()
             val phone = phoneEditText.text.toString()
@@ -46,32 +49,20 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerUser(user: User) {
-        val connection = SingletonDatabase.getConnection()
-        if (connection != null) {
-            try {
-                val sql = "INSERT INTO users (name, phone, email, password) VALUES (?, ?, ?, ?)"
-                val statement: PreparedStatement = connection.prepareStatement(sql).apply {
-                    setString(1, user.name)
-                    setString(2, user.phone)
-                    setString(3, user.email)
-                    setString(4, user.password)
-                }
-
-                val rowsInserted = statement.executeUpdate()
-                if (rowsInserted > 0) {
-                    Toast.makeText(this, "Usuário registrado com sucesso!", Toast.LENGTH_SHORT).show()
+        apiService.registerUser(user).enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@RegisterActivity, "Usuário registrado com sucesso!", Toast.LENGTH_SHORT).show()
                     finish()
                 } else {
-                    Toast.makeText(this, "Falha ao registrar usuário", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity, "Falha ao registrar usuário", Toast.LENGTH_SHORT).show()
                 }
-                statement.close()
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(this, "Erro: ${e.message}", Toast.LENGTH_SHORT).show()
             }
-        } else {
-            Toast.makeText(this, "Erro na conexão com o banco de dados", Toast.LENGTH_SHORT).show()
-        }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Toast.makeText(this@RegisterActivity, "Erro: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     // Ciclo de vida da Activity
@@ -97,11 +88,6 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        // Fecha a conexão com o banco de dados ao destruir a Activity
-        try {
-            val connection = SingletonDatabase.closeConnection()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        // Qualquer lógica necessária para o onDestroy
     }
 }
