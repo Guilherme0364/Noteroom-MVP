@@ -15,7 +15,7 @@
 
 
     <EditText
-        android:id="@+id/editnome"
+        android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
@@ -32,11 +32,11 @@
 
     <!-- Telefone -->
     <EditText
-        android:id="@+id/edittelefone"
+        android:id="@+id/editTextPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_below="@+id/editnome"
+        android:layout_below="@+id/editTextName"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/white"
@@ -50,11 +50,11 @@
 
     <!-- Email -->
     <EditText
-        android:id="@+id/editemail"
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_below="@+id/edittelefone"
+        android:layout_below="@+id/editTextPhone"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/white"
@@ -68,10 +68,10 @@
 
     <!-- Senha -->
     <EditText
-        android:id="@+id/editpassword"
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editemail"
+        android:layout_below="@+id/editTextEmail"
         android:layout_marginStart="16dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="16dp"
@@ -86,10 +86,10 @@
 
     <!-- Botão -->
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_below="@+id/editpassword"
+        android:layout_below="@+id/editTextPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
         android:background="@drawable/button_background"
