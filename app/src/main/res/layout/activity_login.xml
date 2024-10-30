@@ -15,7 +15,7 @@
         android:src="@drawable/loginbg" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="274dp"
@@ -34,7 +34,7 @@
         android:id="@+id/editTextNumberPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextTextEmailAddress"
+        android:layout_below="@+id/editTextEmail"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -75,7 +75,7 @@
         android:textColor="#60169A" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="59dp"
         android:layout_below="@+id/checkBox"
@@ -90,11 +90,12 @@
 
     <!-- Texto para criar conta -->
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/buttonLogin"
         android:layout_centerHorizontal="true"
+        android:onClick="onClickRegister"
         android:layout_marginTop="32dp"
         android:text="Ainda não possui uma conta? Cadastre-se"
         android:textColor="#60169A"

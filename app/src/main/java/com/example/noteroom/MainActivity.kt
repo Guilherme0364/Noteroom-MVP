@@ -1,22 +1,18 @@
-package com.thc.hiddensecrets
+package com.example.noteroom
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
-import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.noteroom.ui.theme.RegisterActivity
+import com.example.noteroom.ui.RegisterActivity
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
         setContentView(R.layout.activity_login)
-
-
     }
 
     override fun onStart() {
@@ -43,18 +39,12 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    fun onClickEntrar(view: View) {
-        val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun onClickRegister(view: View) {
+    fun onClickRegister(view: View?) {
         // Criar um Intent para abrir a RegisterActivity
-        val intent = Intent(this, RegisterActivity::class.java)
-
-        // Iniciar a nova Activity
+        val intent = Intent(
+            this,
+            RegisterActivity::class.java
+        )
         startActivity(intent)
-        Toast.makeText(this, "Registrando...", Toast.LENGTH_SHORT).show()
     }
-
 }

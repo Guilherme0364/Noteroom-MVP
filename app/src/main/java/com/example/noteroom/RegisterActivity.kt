@@ -1,6 +1,7 @@
 package com.example.noteroom.ui
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -48,46 +49,47 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun registerUser(user: User) {
-        apiService.registerUser(user).enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                if (response.isSuccessful) {
-                    Toast.makeText(this@RegisterActivity, "Usuário registrado com sucesso!", Toast.LENGTH_SHORT).show()
-                    finish()
-                } else {
-                    Toast.makeText(this@RegisterActivity, "Falha ao registrar usuário", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                Toast.makeText(this@RegisterActivity, "Erro: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
-
-    // Ciclo de vida da Activity
+    // Funções do ciclo de vida da Activity
     override fun onStart() {
         super.onStart()
-        // Qualquer lógica necessária para o onStart
     }
 
     override fun onResume() {
         super.onResume()
-        // Qualquer lógica necessária para o onResume
     }
 
     override fun onPause() {
         super.onPause()
-        // Qualquer lógica necessária para o onPause, como salvar o estado
     }
 
     override fun onStop() {
         super.onStop()
-        // Lógica para onStop, se necessária
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        // Qualquer lógica necessária para o onDestroy
+    }
+
+    // Função para registrar o usuário
+    fun registerUser(user: User) {
+        try{
+            apiService.registerUser(user).enqueue(object : Callback<ResponseBody> {
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    if (response.isSuccessful) {
+                        Toast.makeText(this@RegisterActivity, "Usuário registrado com sucesso!", Toast.LENGTH_SHORT).show()
+                        finish()
+                    } else {
+                        Toast.makeText(this@RegisterActivity, "Falha ao registrar usuário", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Toast.makeText(this@RegisterActivity, "Erro: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
+        } catch(e: Exception) {
+            print(e)
+        }
+
+
     }
 }
