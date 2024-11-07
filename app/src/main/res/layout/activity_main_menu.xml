@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:orientation="vertical"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-</LinearLayout>
+    <!-- Imagem de fundo -->
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/__menu_background" />
+
+    <!-- Texto do título do app -->
+    <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="NOTEROOM"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    <!-- Menu de navegação (ícone de menu) -->
+    <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/__menu_button"
+            android:contentDescription="Menu" />
+
+    <!-- Saudação do usuário -->
+    <TextView
+            android:id="@+id/welcomeMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appTitle"
+            android:layout_marginTop="24dp"
+            android:layout_centerHorizontal="true"
+            android:text="Seja bem-vindo, [NOME DO USUÁRIO]!"
+            android:textColor="#60169A"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    <!-- E-mail do usuário -->
+    <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcomeMessage"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:text="[email_do_usuario@exemplo.com]"
+            android:textColor="#60169A"
+            android:textSize="14sp" />
+
+    <!-- Botão de Matérias e Cadernos -->
+    <ImageButton
+            android:id="@+id/subjectsButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/userEmail"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/__subject_button"
+            android:contentDescription="Botão para Matérias e Cadernos" />
+
+    <!-- Botão de Atividades e Para Fazer -->
+    <ImageButton
+            android:id="@+id/todoButton"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_below="@id/subjectsButton"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/__activity_button"
+            android:contentDescription="Botão para Atividades e Para Fazer" />
+
+</RelativeLayout>
