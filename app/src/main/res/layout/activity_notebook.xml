@@ -18,7 +18,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/__arrow_back"
-            android:contentDescription="Arrow back" />
+            android:contentDescription="@string/arrow_back" />
 
     <!-- Texto do título do app -->
     <TextView

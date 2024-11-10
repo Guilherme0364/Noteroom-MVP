@@ -1,7 +1,6 @@
-package com.example.noteroom.ui
+package com.example.noteroom.telas
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -22,7 +21,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var registerButton: Button
-    private val apiService: ApiService by lazy { RetrofitClient.instance }
+    private val apiService: ApiService by lazy { RetrofitClient(this).instance }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

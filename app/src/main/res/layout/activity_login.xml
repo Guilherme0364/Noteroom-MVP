@@ -81,10 +81,10 @@
         android:layout_below="@+id/checkBox"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"
-        android:background="@drawable/button_background"
+        android:background="@color/black"
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
-        android:text="Entrar"
+        android:text="@string/entrar"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 

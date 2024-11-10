@@ -1,25 +1,15 @@
-package com.example.noteroom
+package com.example.noteroom.telas
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.noteroom.telas.LoginActivity
+import com.example.noteroom.R
 
-class MainActivity : AppCompatActivity() {
+class MateriasActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (supportActionBar != null) {
-            supportActionBar!!.hide()
-        }
+        setContentView(R.layout.activity_notebook)
 
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-        finish()
-
-    }
-
-    override fun onStart() {
-        super.onStart()
     }
 
     override fun onResume() {

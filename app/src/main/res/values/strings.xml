@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Nooteroom</string>
+    <string name="entrar">Entrar</string>
+    <string name="bot_o_para_mat_rias_e_cadernos">Botão para Matérias e Cadernos</string>
+    <string name="bot_o_para_atividades_e_para_fazer">Botão para Atividades e Para Fazer</string>
+    <string name="arrow_back">Arrow back</string>
 </resources>

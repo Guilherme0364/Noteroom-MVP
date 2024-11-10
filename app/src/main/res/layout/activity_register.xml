@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/register_background" />
+        android:src="@drawable/__register_background" />
 
     <!-- Nome -->
     <EditText
@@ -91,7 +91,7 @@
         android:layout_below="@+id/editTextPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
-        android:background="@drawable/button_background"
+        android:background="@color/black"
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
         android:onClick="registerUser"

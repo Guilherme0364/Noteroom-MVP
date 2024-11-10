@@ -11,6 +11,6 @@ interface ApiService {
     @POST("users")
     fun registerUser(@Body user: User): Call<ResponseBody>
 
-    @POST("login") // Rota para login
+    @POST("/login") // Rota para login
     fun loginUser(@Body user: DTOUser): Call<ResponseBody>
 }
