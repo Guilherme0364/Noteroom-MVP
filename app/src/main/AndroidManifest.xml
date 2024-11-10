@@ -28,7 +28,8 @@
         <activity android:name=".telas.RegisterActivity"/>
         <activity android:name=".telas.LoginActivity"/>
         <activity android:name=".telas.HomeActivity"/>
-        <activity android:name=".telas.MateriasActivity"/>
+        <activity android:name=".telas.SubjectActivity"/>
+        <activity android:name=".telas.NotebookActivity"/>
     </application>
 
 </manifest>

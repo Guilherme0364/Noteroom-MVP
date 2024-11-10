@@ -4,12 +4,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.noteroom.R
 
-class MateriasActivity : AppCompatActivity() {
+class NotebookActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notebook)
-
     }
 
     override fun onResume() {

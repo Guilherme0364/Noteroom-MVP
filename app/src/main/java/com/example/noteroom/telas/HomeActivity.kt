@@ -33,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
         super.onStart()
         val viewMaterias = findViewById<ImageButton>(R.id.subjectsButton)
         viewMaterias.setOnClickListener{
-            val intent = Intent(this, MateriasActivity::class.java)
+            val intent = Intent(this, SubjectActivity::class.java)
             startActivity(intent)
         }
     }
