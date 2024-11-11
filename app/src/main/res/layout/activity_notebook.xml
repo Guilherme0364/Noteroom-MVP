@@ -56,51 +56,13 @@
 
 
     <!-- Componente -->
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#60169A"
-                    android:padding="8dp"
-                    android:layout_marginTop="160dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:gravity="center_vertical">
-
-        <ImageView
-                android:id="@+id/notebookIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/__notebook_icon"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:contentDescription="Notebook Icon" />
-
-        <TextView
-                android:id="@+id/subjectName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/notebookIcon"
-                android:layout_toStartOf="@id/editIcon"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Logaritmo"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:gravity="center" />
-
-        <ImageView
-                android:id="@+id/editIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/__pencil_icon"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:contentDescription="Edit Icon" />
-    </RelativeLayout>
-
-
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appSubtitle"
+            android:layout_marginTop="20dp"
+            android:padding="8dp" />
 
 
 

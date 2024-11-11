@@ -36,6 +36,13 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, SubjectActivity::class.java)
             startActivity(intent)
         }
+
+        val viewAtividade = findViewById<ImageButton>(R.id.todoButton)
+        viewAtividade.setOnClickListener{
+            val intent = Intent(this, AtividadeActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun onResume() {
